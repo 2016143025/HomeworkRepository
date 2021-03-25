@@ -1,0 +1,46 @@
+h1 {
+    font-family: 'Chango', cursive;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-left: 30px;
+}
+
+.s_box {
+    color: black;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.s_box:hover {
+    margin: 8px;
+    border-top: 2px inset red;
+    border-bottom: 2px inset red;
+}
+
+hr {
+    border: .5px solid navy
+}
+input[name="name"] {border: 2px solid black;}
+button[type="submit"] {
+    background-color: skyblue; border: 2px outset black;
+    width: 100px;
+    padding: auto;
+}
+button[type="reset"] {
+    background-color: red; border: 2px outset black;
+    width: 100px;
+    padding: auto;
+}
+button[type="submit"]:hover {
+    background: radial-gradient(circle at 50% 50%, Aqua 0%,skyblue 100%);
+}
+button[type="reset"]:hover {
+    background: radial-gradient(circle at 50% 50%, Lightcoral 0%,red 100%);
+}
