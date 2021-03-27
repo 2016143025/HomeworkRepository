@@ -15,11 +15,11 @@ p {
     width: 80px;
     text-align: center;
     font-weight: bold;
-    margin: 10px;
+    margin: 10px 2px;
 }
 
 .s_box:hover {
-    margin: 8px;
+    margin: 8px 2px;
     border-top: 2px inset red;
     border-bottom: 2px inset red;
 }
