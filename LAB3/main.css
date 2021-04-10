@@ -1,0 +1,112 @@
+h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    width: 1020px;
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    animation-name: title;
+    animation-duration: 2s;
+}
+h2 {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+@keyframes title
+{
+    0% {opacity:0; left:700px; top:0px;}
+    100% {opacity:1; left:0px; top:0px;}
+}
+p, form, div {
+    position: relative;
+    width: 1020px;
+    margin: auto;
+}
+
+p{
+    padding-top: 20px;
+}
+.col{
+    width: 788px;
+    border: 1px solid yellowgreen;
+    padding: 20px 10px;
+    column-count: 3;
+    column-gap: 40px;
+    column-width: 236px;
+    column-rule-style: dotted;
+    column-rule-width: 1.5px;    column-rule-color: yellowgreen;
+    font-family: 'Noto Sans KR', sans-serif;
+}   
+
+.s_box {
+    color: black;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 2px;
+}
+
+.s_box:hover {
+    margin: 8px 2px;
+    border-top: 2px inset red;
+    border-bottom: 2px inset red;
+}
+
+img {
+    width: 25px;
+    height: 35px;
+    transition: width 2s, height 2s;
+    display: block;
+}
+img:hover {
+    width: 250px;
+    height: 350px;
+}
+.imgs {
+    text-align: center;
+}
+
+.imgbox {
+    display: inline-block;
+    border: 1px solid yellowgreen;
+    width: 250px;
+    height: 350px;
+}
+
+hr {
+    border: .5px solid navy
+}
+input[name="name"] {border: 2px solid black;}
+button[type="submit"] {
+    background-color: skyblue; border: 2px outset black;
+    width: 100px;
+    padding: auto;
+}
+button[type="reset"] {
+    background-color: red; border: 2px outset black;
+    width: 100px;
+    padding: auto;
+}
+button[type="submit"]:hover {
+    background: radial-gradient(circle at 50% 50%, Aqua 0%,skyblue 100%);
+}
+button[type="reset"]:hover {
+    background: radial-gradient(circle at 50% 50%, Lightcoral 0%,red 100%);
+}
+
+/* column 때매 밀림현상 해결 */
+.s_box1 {
+    color: black;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 2px 10px 10px;
+}
+
+.s_box1:hover {
+    margin: 8px 2px 8px 10px;
+    border-top: 2px inset red;
+    border-bottom: 2px inset red;
+}

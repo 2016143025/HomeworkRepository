@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <title>signuppage</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div>
+    <h1>안녕하세요 마켓컬리입니다.</h1>
+    <p>
+        <a class="s_box" href="index.html">메인페이지</a>
+        <span class="s_box">로그인</span>
+        <a class="s_box" href="signup.html">회원가입</a>
+    </p>
+    </div>
+    <hr>
+    <div>
+    <p>
+        <span style="font-weight:bold;">회원정보 (필수)</span><br>
+    </p>
+    <form method="GET" action="http://www.example.com" autocomplete="on">
+        <p><label>아이디:
+                <input type="text" name="id" size="20" maxlength="40" placeholder="아이디를 입력하세요" required />
+            </label></p>
+        <p><label>비밀번호:
+                <input type="password" name="password1" size="20" maxlength="40" placeholder="비밀번호 입력하세요"
+                    autocomplete="off" required />
+            </label></p>
+        <p><label>비밀번호 확인:
+                <input type="password" name="password2" size="20" maxlength="40" placeholder="비밀번호 확인"
+                    autocomplete="off" required />
+            </label></p>
+        <p>
+            <button type="submit" name="submit">Signup</button>
+            <button type="reset" name="reset">Cancel</button>
+        </p>
+    </form>
+    </div>
+    <hr>
+</body>
+
+
+</html>
