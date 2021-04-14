@@ -81,12 +81,10 @@ input[name="name"] {border: 2px solid black;}
 button[type="submit"] {
     background-color: skyblue; border: 2px outset black;
     width: 100px;
-    padding: auto;
 }
 button[type="reset"] {
     background-color: red; border: 2px outset black;
     width: 100px;
-    padding: auto;
 }
 button[type="submit"]:hover {
     background: radial-gradient(circle at 50% 50%, Aqua 0%,skyblue 100%);
