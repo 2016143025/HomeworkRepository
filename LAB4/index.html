@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>E-commerce main page</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style type="text/css">
+    </style>
+</head>
+
+<body class="body">
+    <div>
+        <h1>안녕하세요 마켓컬리입니다.</h1>
+        <p>
+            <span class="s_box1">메인페이지</span>
+            <a class="s_box" href="login.html">로그인</a>
+            <a class="s_box" href="signup.html">회원가입</a>
+        </p>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="search">
+            <form class="category">
+                <label for="categories" class="labels">Choose a category</label>
+                <select name="categories" id="categories">
+                    <option value="all">All</option>
+                    <option value="economy">경영/경제</option>
+                    <option value="college">대학교재</option>
+                    <option value="improve">자기계발</option>
+                </select>
+                <br>
+                <label for="searchtext" class="labels">Enter search term</label>
+                <input type="text" id="searchtext" name="searchtext">
+                <input type="button" id="result" name="result" value="Filter results">
+                <input type="button" id="gofisrt" name="result" value="시작화면 초기화">
+            </form>
+        </div>
+        <div class="products">
+            <div class="imgs">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <script>
+        fetch('product.json')
+        .then(function checkStatus(response){
+            if (response.ok){
+                return response;
+            }
+            else {throw Error("Error in request");}
+        })
+        .then(response=>response.json())
+        .then(processData)
+        .catch(function handleError(e){
+            alert("json error"+e.message);
+        });
+        function processData(data){
+            productjson = data;
+            addproducts();
+        }
+        function  addproducts(){
+            for(let i=0;i<4;i++){
+                let imgbox = document.createElement('div');
+                imgbox.setAttribute('class','imgbox');
+                let inform = document.createElement('button');
+                inform.setAttribute('class','inform');
+                inform.innerHTML='Click to see more';
+                let bookname = document.createElement('div');
+                bookname.setAttribute('class','bookname');
+                let productimg = document.createElement('img');
+                productimg.setAttribute('class','productimg');
+                let price = document.createElement('div');
+                price.setAttribute('class','price');
+                let imgs = document.querySelector('.imgs');
+                let br = document.createElement('br');
+                bookname.innerHTML = '제목: '+productjson.list[j].name;
+                productimg.setAttribute('src',productjson.list[j].imgurl);
+                productimg.setAttribute('alt',productjson.list[j].id);
+                price.innerHTML = 'Price: '+productjson.list[j].price;
+                imgbox.appendChild(inform);
+                imgbox.appendChild(bookname);
+                imgbox.appendChild(br);
+                imgbox.appendChild(productimg);
+                imgbox.appendChild(price);
+                imgs.appendChild(imgbox);
+                j=j+1;
+            }
+        }
+        let j=0;
+        let productjson;
+
+        document.addEventListener('DOMContentLoaded',function (){
+            window.onscroll=()=>{
+                if((window.innerHeight+window.scrollY+0.8)>=document.body.offsetHeight){
+                    addproducts();
+                }
+            };
+            document.addEventListener('click',function (){
+                let b = document.querySelectorAll('.inform');
+                for (let j=0;j<b.length;j++){
+
+                    document.querySelectorAll('.inform')[j].onclick= function(e){
+                        if (e.target.parentNode.querySelector('.bookname').style.display==='inline-block'){
+                                e.target.parentNode.querySelector('.bookname').style.display='none';
+                                e.target.parentNode.querySelector('.price').style.display='none';
+                        }
+                        else {
+                                e.target.parentNode.querySelector('.bookname').style.display='inline-block';
+                                e.target.parentNode.querySelector('.price').style.display='inline-block';
+                        }
+                    };
+                }
+            });
+            document.getElementById('categories').addEventListener('change',function (e){
+                if (e.target.value==='all'){
+                    document.getElementsByClassName('imgs')[0].innerHTML="";
+                    j=0;
+                    addproducts();
+                }
+                else {
+                    document.getElementsByClassName('imgs')[0].innerHTML="";
+                    for(let i=0;i<productjson.list.length;i++){
+                        if(productjson.list[i].category===e.target.value){
+                            let imgbox = document.createElement('div');
+                            imgbox.setAttribute('class','imgbox');
+                            let inform = document.createElement('button');
+                            inform.setAttribute('class','inform');
+                            inform.innerHTML='Click to see more';
+                            let bookname = document.createElement('div');
+                            bookname.setAttribute('class','bookname');
+                            let productimg = document.createElement('img');
+                            productimg.setAttribute('class','productimg');
+                            let price = document.createElement('div');
+                            price.setAttribute('class','price');
+                            let imgs = document.querySelector('.imgs');
+                            let br = document.createElement('br');
+                            bookname.innerHTML = '제목: '+productjson.list[i].name;
+                            productimg.setAttribute('src',productjson.list[i].imgurl);
+                            productimg.setAttribute('alt',productjson.list[i].id);
+                            price.innerHTML = 'Price: '+productjson.list[i].price;
+                            imgbox.appendChild(inform);
+                            imgbox.appendChild(bookname);
+                            imgbox.appendChild(br);
+                            imgbox.appendChild(productimg);
+                            imgbox.appendChild(price);
+                            imgs.appendChild(imgbox);
+                        }
+                        j=productjson.list.length;
+                    }
+                }
+
+            });
+            document.getElementById('result').addEventListener('click',function (){
+                document.getElementsByClassName('imgs')[0].innerHTML="";
+                let searchtext = document.getElementById('searchtext').value.toUpperCase();
+                for(let i=0;i<productjson.list.length;i++){
+                    if(productjson.list[i].name.toUpperCase().includes(searchtext)) {
+                        let imgbox = document.createElement('div');
+                        imgbox.setAttribute('class', 'imgbox');
+                        let inform = document.createElement('button');
+                        inform.setAttribute('class', 'inform');
+                        inform.innerHTML = 'Click to see more';
+                        let bookname = document.createElement('div');
+                        bookname.setAttribute('class', 'bookname');
+                        let productimg = document.createElement('img');
+                        productimg.setAttribute('class', 'productimg');
+                        let price = document.createElement('div');
+                        price.setAttribute('class', 'price');
+                        let imgs = document.querySelector('.imgs');
+                        let br = document.createElement('br');
+                        bookname.innerHTML = '제목: ' + productjson.list[i].name;
+                        productimg.setAttribute('src', productjson.list[i].imgurl);
+                        productimg.setAttribute('alt', productjson.list[i].id);
+                        price.innerHTML = 'Price: ' + productjson.list[i].price;
+                        imgbox.appendChild(inform);
+                        imgbox.appendChild(bookname);
+                        imgbox.appendChild(br);
+                        imgbox.appendChild(productimg);
+                        imgbox.appendChild(price);
+                        imgs.appendChild(imgbox);
+                    }
+                }
+                j=productjson.list.length;
+            });
+            document.getElementById('gofisrt').addEventListener('click',function (){
+                document.getElementsByClassName('imgs')[0].innerHTML="";
+                j=0;
+                addproducts();
+            });
+            });
+
+    </script>
+</body>

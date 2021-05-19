@@ -1,0 +1,89 @@
+{
+  "list": [
+    {
+      "id":"list1",
+      "category":"economy",
+      "name":"아들아, 돈 공부해야 한다.",
+      "price":"15,800원",
+      "imgurl": "images/list1.jpg"
+    },
+    {
+      "id":"list2",
+      "category":"economy",
+      "name":"RICH DAD",
+      "price":"15,800원",
+      "imgurl": "images/list2.jpg"
+    },
+    {
+      "id":"list3",
+      "category":"economy",
+      "name":"돈의 속성",
+      "price":"16,800원",
+      "imgurl": "images/list3.jpg"
+    },
+    {
+      "id":"list4",
+      "category":"economy",
+      "name":"THINK AGAIN",
+      "price":"19,800원",
+      "imgurl": "images/list4.jpg"
+    },
+    {
+      "id":"list5",
+      "category":"college",
+      "name":"CALCULUS",
+      "price":"45,000원",
+      "imgurl": "images/list5.jpg"
+    },
+    {
+      "id":"list6",
+      "category":"college",
+      "name":"PRINCIPLES OF ECONOMICS",
+      "price":"45,000원",
+      "imgurl": "images/list6.jpg"
+    },
+    {
+      "id":"list7",
+      "category":"college",
+      "name":"디지털 논리회로",
+      "price":"28,000원",
+      "imgurl": "images/list7.jpg"
+    },
+    {
+      "id":"list8",
+      "category":"college",
+      "name":"C언어로 쉽게 풀어쓴 자료구조",
+      "price":"29,000원",
+      "imgurl": "images/list8.jpg"
+    },
+    {
+      "id":"list9",
+      "category":"improve",
+      "name":"나는 4시간만 일한다",
+      "price":"14,800원",
+      "imgurl": "images/list9.jpg"
+    },
+    {
+      "id":"list10",
+      "category":"improve",
+      "name":"뜨겁게 나를 사랑한다.",
+      "price":"17,100원",
+      "imgurl": "images/list10.jpg"
+    },
+    {
+      "id":"list11",
+      "category":"improve",
+      "name":"반야심경 마음공부",
+      "price":"16,000원",
+      "imgurl": "images/list11.jpg"
+    },
+    {
+      "id":"list12",
+      "category":"improve",
+      "name":"내 마음을 나도 모를 때",
+      "price":"14,400원",
+      "imgurl": "images/list12.jpg"
+    }
+
+  ]
+}

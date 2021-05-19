@@ -1,0 +1,185 @@
+.body{
+    width: 1020px;
+    border: 1px solid black;
+    margin: auto;
+}
+h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    width: 1020px;
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    animation-name: title;
+    animation-duration: 2s;
+}
+h2 {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+@keyframes title
+{
+    0% {opacity:0; left:700px; top:0;}
+    100% {opacity:1; left:0; top:0;}
+}
+/*p, form, div {
+    position: relative;
+    width: 1020px;
+    margin: auto;
+}*/
+
+p{
+    padding-top: 20px;
+}
+
+.s_box {
+    color: black;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 2px;
+}
+
+.s_box:hover {
+    margin: 8px 2px;
+    border-top: 2px inset red;
+    border-bottom: 2px inset red;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.search{
+    width: 300px;
+    border: 2px solid black;
+}
+.category{
+    margin-left: 20px;
+}
+
+.labels{
+    font-family: 'Gothic A1', sans-serif;
+    display: block;
+    margin-top: 50px;
+}
+#categories{
+    font-family: 'Gothic A1', sans-serif;
+    width: 250px;
+}
+#searchtext{
+    width: 240px;
+}
+#result{
+    font-family: 'Gothic A1', sans-serif;
+    width: 250px;
+    margin-top: 10px;
+}
+#gofisrt{
+    font-family: 'Gothic A1', sans-serif;
+    width: 250px;
+    margin-top: 30px;
+
+}
+.products{
+    width: 700px;
+    border: 2px solid black;
+}
+.imgs{
+    margin: 20px 20px;
+    width: 660px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.productimg {
+    width: 100px;
+    height: 200px;
+    display: inline;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.imgbox {
+    position: relative;
+    border: 1px solid yellowgreen;
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+}
+.inform{
+    font-family: 'Gothic A1', sans-serif;
+    position: absolute;
+    background-color: #43cd94;
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.inform:hover{
+    background: radial-gradient(circle at 50% 50%, #90ee90 0%,#43cd94 100%);
+}
+.bookname{
+    font-family: 'Gothic A1', sans-serif;
+    position: absolute;
+    display: none;
+    /*display: inline-block;*/
+    font-size: 15px;
+    width: 180px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 80px;
+}
+.price{
+    font-family: 'Gothic A1', sans-serif;
+    position: absolute;
+    width: 150px;
+    display: none;
+    /*display: inline-block;*/
+    font-size: 15px;
+    left: 140px;
+    bottom: 20px;
+}
+hr {
+    border: .5px solid navy
+}
+input[name="name"] {border: 2px solid black;}
+button[type="submit"] {
+    background-color: skyblue; border: 2px outset black;
+    width: 100px;
+}
+button[type="reset"] {
+    background-color: red; border: 2px outset black;
+    width: 100px;
+}
+button[type="submit"]:hover {
+    background: radial-gradient(circle at 50% 50%, Aqua 0%,skyblue 100%);
+}
+button[type="reset"]:hover {
+    background: radial-gradient(circle at 50% 50%, Lightcoral 0%,red 100%);
+}
+
+/* column 때매 밀림현상 해결 */
+.s_box1 {
+    color: black;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 2px 10px 10px;
+}
+
+.s_box1:hover {
+    margin: 8px 2px 8px 10px;
+    border-top: 2px inset red;
+    border-bottom: 2px inset red;
+}
